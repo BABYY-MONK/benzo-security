@@ -8,6 +8,7 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
+import Products from './pages/Products';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -49,6 +50,7 @@ const App = () => {
             <Link to="/" style={{ color: isActive('/') }}>Home</Link>
             <Link to="/about" style={{ color: isActive('/about') }}>About</Link>
             <Link to="/services" style={{ color: isActive('/services') }}>Services</Link>
+            <Link to="/products" style={{ color: isActive('/products') }}>Products</Link>
             <Link to="/projects" style={{ color: isActive('/projects') }}>Projects</Link>
             <Link to="/contact" style={{ display: 'flex', alignItems: 'center', gap: '0.2rem', color: 'var(--primary)', fontWeight: 600, padding: '0.5rem 1rem', border: '1px solid var(--primary)', borderRadius: '20px' }}>
               Contact Us <ChevronRight size={16} />
@@ -60,6 +62,7 @@ const App = () => {
       {/* Adding a quick mobile nav hack inline to ensure UI doesn't break, ideally needs hamburger menu */}
       <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', padding: '1rem', background: 'var(--surface-color)', flexWrap: 'wrap' }} className="mobile-nav">
           <Link to="/" style={{ color: isActive('/') }}>Home</Link>
+          <Link to="/products" style={{ color: isActive('/products') }}>Products</Link>
           <Link to="/projects" style={{ color: isActive('/projects') }}>Projects</Link>
           <Link to="/contact" style={{ color: isActive('/contact') }}>Contact</Link>
       </div>
@@ -70,6 +73,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/products" element={<Products />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
