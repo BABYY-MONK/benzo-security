@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
-import { Shield, Sun, Video, CheckCircle2, ArrowRight, Zap, Lock, Smartphone, Wrench, Battery, Camera, Gate } from 'lucide-react';
+import { Shield, Sun, Video, CheckCircle2, ArrowRight, Zap, Target, Cpu, TrendingUp, Lock, Smartphone, Wrench, Camera } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   visible: (i = 0) => ({
     opacity: 1, y: 0,
-    transition: { duration: 0.7, ease: 'easeOut', delay: i * 0.12 }
+    transition: { duration: 0.65, ease: 'easeOut' as const, delay: i * 0.1 }
   })
 };
 
