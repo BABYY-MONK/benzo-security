@@ -1,5 +1,27 @@
 import { motion } from 'framer-motion';
 import { PlayCircle, Image as ImageIcon } from 'lucide-react';
+import PhotoCarousel from '../components/PhotoCarousel';
+
+const carouselItems = [
+  {
+    id: '1',
+    url: 'https://images.unsplash.com/photo-1510419263158-b193231eb96d?q=80&w=1200&auto=format&fit=crop',
+    title: 'Precision Automatic Gate Installation',
+    alt: 'Automatic Gate'
+  },
+  {
+    id: '2',
+    url: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&auto=format&fit=crop',
+    title: 'High-Efficiency Solar Panel Array',
+    alt: 'Solar Panels'
+  },
+  {
+    id: '3',
+    url: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1200&auto=format&fit=crop',
+    title: 'Professional Tools & Equipment Used',
+    alt: 'Installation Tools'
+  }
+];
 
 const Projects = () => {
   return (
@@ -11,6 +33,14 @@ const Projects = () => {
           See Benzo Security in action. From robust automatic gates engineered for safety, to state-of-the-art CCTV and reliable solar grids.
         </p>
       </div>
+
+      {/* Featured Project Carousel */}
+      <section style={{ marginBottom: '6rem' }}>
+        <h2 style={{ fontSize: '2rem', marginBottom: '2rem', display: 'flex', alignItems: 'center', gap: '0.75rem', justifyContent: 'center' }}>
+          Featured Installations & Equipment
+        </h2>
+        <PhotoCarousel items={carouselItems} />
+      </section>
 
       {/* Videos Section (Automatic Gates) */}
       <section style={{ marginBottom: '6rem' }}>

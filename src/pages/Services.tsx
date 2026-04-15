@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
-import { Shield, Sun, Video, CheckCircle2, ArrowRight, Zap, Target, Cpu, TrendingUp, Lock, Smartphone, Wrench, Camera } from 'lucide-react';
+import { Shield, Sun, Video, CheckCircle2, ArrowRight, Zap, Lock, Smartphone, Wrench, Camera, Droplet } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import PhotoCarousel from '../components/PhotoCarousel';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -9,6 +10,27 @@ const fadeUp = {
     transition: { duration: 0.65, ease: 'easeOut' as const, delay: i * 0.1 }
   })
 };
+
+const carouselItems = [
+  {
+    id: '1',
+    url: 'https://images.unsplash.com/photo-1510419263158-b193231eb96d?q=80&w=1200&auto=format&fit=crop',
+    title: 'Automatic Gate Installations',
+    alt: 'Automatic Gate Installation'
+  },
+  {
+    id: '2',
+    url: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&auto=format&fit=crop',
+    title: 'Solar & Backup Systems',
+    alt: 'Solar Panels'
+  },
+  {
+    id: '3',
+    url: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1200&auto=format&fit=crop',
+    title: 'Precision Tools & Diagnostics',
+    alt: 'Installation Tools'
+  }
+];
 
 /* ==================== AUTOMATIC GATES ==================== */
 const gateFeatures = [
@@ -72,6 +94,16 @@ const Services = () => {
             <p style={{ color: 'var(--text-secondary)', fontSize: '1.15rem', maxWidth: '700px', margin: '0 auto', lineHeight: 1.8 }}>
               From intelligent gate systems and 4K surveillance to clean solar energy — every service delivered by certified professionals using premium hardware.
             </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ===== FEATURED WORK CAROUSEL ===== */}
+      <section style={{ padding: '4rem 0 2rem', background: 'rgba(255,255,255,0.01)' }}>
+        <div className="container">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+            <h2 style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '2rem' }}>Installations & Equipment</h2>
+            <PhotoCarousel items={carouselItems} />
           </motion.div>
         </div>
       </section>
@@ -311,6 +343,60 @@ const Services = () => {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }} />
+
+      {/* ==================== MAINTENANCE ==================== */}
+      <section style={{ padding: '7rem 0', background: 'var(--surface-gradient)' }} id="maintenance">
+        <div className="container">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} style={{ marginBottom: '4rem', textAlign: 'center' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '1.5rem', background: 'rgba(246, 201, 146, 0.1)', padding: '1rem 2rem', borderRadius: '50px', border: '1px solid rgba(246, 201, 146, 0.2)' }}>
+              <Wrench size={28} color="var(--primary)" />
+              <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)' }}>Comprehensive Maintenance</h2>
+            </div>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '1.15rem', maxWidth: '820px', margin: '0 auto', lineHeight: 1.8 }}>
+              We don't just install; we ensure your systems run flawlessly for years. Our dedicated maintenance division provides regular servicing, repairs, and diagnostics.
+            </p>
+          </motion.div>
+
+          {/* Maintenance Categories */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+            
+            <motion.div className="glass-panel" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0} whileHover={{ y: -6 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.25rem' }}>
+                <div style={{ padding: '0.75rem', background: 'var(--bg-color)', borderRadius: '12px' }}>
+                  <Shield color="var(--primary)" size={24} />
+                </div>
+                <h3 style={{ fontSize: '1.2rem', color: '#fff' }}>Products & Services</h3>
+              </div>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
+                Full servicing and preventive maintenance for all our automatic gates, CCTV systems, and solar installations. We maintain what we install.
+              </p>
+            </motion.div>
+
+            <motion.div className="glass-panel" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1} whileHover={{ y: -6 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.25rem' }}>
+                <div style={{ padding: '0.75rem', background: 'var(--bg-color)', borderRadius: '12px' }}>
+                  <Droplet color="var(--primary)" size={24} />
+                </div>
+                <h3 style={{ fontSize: '1.2rem', color: '#fff' }}>Reverse Osmosis Machines</h3>
+              </div>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
+                We also offer specialized servicing, filter replacements, and recalibration for all Reverse Osmosis (RO) water purification units to ensure perfectly clean water.
+              </p>
+            </motion.div>
+
+          </div>
+
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} style={{ textAlign: 'center', marginTop: '4rem' }}>
+            <Link to="/contact">
+              <button className="btn-solid" style={{ padding: '1rem 2.5rem', fontSize: '1rem' }}>
+                Book a Service Call <ArrowRight size={18} />
+              </button>
+            </Link>
+          </motion.div>
         </div>
       </section>
 
