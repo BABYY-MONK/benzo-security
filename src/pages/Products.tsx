@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Shield, Sun, Video, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Shield, Sun, Video, CheckCircle2, ArrowRight, Droplets } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const fadeUp = {
@@ -17,8 +17,8 @@ const products = {
       name: 'Centurion D5 Smart Sliding Motor',
       tag: 'Best Seller',
       tagColor: 'var(--primary)',
-      description: 'Industry-leading gate motor for domestic and light-industrial applications. Features intelligent speed control, soft-start/stop, and battery backup as standard.',
-      features: ['Top speed of up to 36m/min', 'Built-in vibration tamper detection', '24V deep-cycle battery backup', 'Smartphone app integration', '5-year motor warranty'],
+      description: 'Upgrade your home or business security with the industry-leading Centurion D5 Smart. Designed for both domestic and light-industrial applications, this motor guarantees fast, reliable, and secure access control. Say goodbye to manual gates and vulnerability during power outages—its advanced battery backup system ensures continuous operation. It combines sleek design with brute strength and is backed by professional installation and a comprehensive warranty.',
+      features: ['Intelligent smartphone app monitoring', 'Anti-tamper vibration alarm', 'CE & ISO Certified safety standards', 'Free professional site survey & installation', '5-year manufacturer warranty & servicing'],
       image: 'https://images.unsplash.com/photo-1621252179027-94459d278660?q=80&w=800&auto=format&fit=crop'
     },
     {
@@ -26,8 +26,8 @@ const products = {
       name: 'Vantage Swing Gate Operator',
       tag: 'Heavy Duty',
       tagColor: 'var(--primary)',
-      description: 'Robust and sleek automated swing gate operator built tough for the harsh African climate. Full structural protection with anti-crush sensors for safety.',
-      features: ['Strong die-cast aluminum housing', 'Smooth acceleration and deceleration', 'High push force for heavy gates', 'Anti-crushing safety sensors', 'Full weather protection'],
+      description: 'The Vantage Swing Gate Operator is a robust and sleek automated system built tough for the harsh African climate. No technical knowledge is required for daily use; it provides full structural protection with anti-crush sensors for safety. Enjoy peace of mind knowing your perimeter is secured by a highly tested, internationally accredited motor.',
+      features: ['Strong die-cast aluminum housing', 'Smooth acceleration with anti-crush sensors', 'Extensively tested for weather endurance', 'Seamless integration with access controls', '3-year system warranty'],
       image: 'https://images.unsplash.com/photo-1510419263158-b193231eb96d?q=80&w=800&auto=format&fit=crop'
     },
     {
@@ -35,8 +35,8 @@ const products = {
       name: 'FAAC 844 ER Industrial Barrier',
       tag: 'Commercial',
       tagColor: 'var(--secondary)',
-      description: 'High-cycle industrial boom barrier for parking lots, commercial entries, and toll points. Handles 2,000+ cycles per day with maintenance-free operation.',
-      features: ['3–6 metre boom length options', 'Up to 2,000 cycles/day capacity', 'Loop detector compatibility', 'LED boom lighting with reflectors', 'Integrated vehicle detection'],
+      description: 'Designed specifically for high-traffic environments, the FAAC 844 ER is the ultimate industrial boom barrier for parking lots, commercial entries, and toll points. Capable of handling over 2,000 cycles per day with minimal to zero downtime, it guarantees automated, maintenance-free operation for large fleet businesses and residential complexes.',
+      features: ['3–6 metre boom length options', 'Up to 2,000 continuous cycles/day capacity', 'Loop detector & ticketing compatibility', 'CE Certified with integrated vehicle detection', 'Comprehensive commercial maintenance plan'],
       image: 'https://images.unsplash.com/photo-1590674899484-d5640e854abe?q=80&w=800&auto=format&fit=crop'
     }
   ],
@@ -46,8 +46,8 @@ const products = {
       name: '4K ColorVu Dome Camera',
       tag: '8MP Ultra-HD',
       tagColor: 'var(--primary)',
-      description: 'High-definition 8MP IP camera capturing vivid colour 24/7, even in zero-light environments using Hikvision ColorVu technology. Perfect indoor/outdoor security.',
-      features: ['8 Megapixel ultra-HD resolution', 'F1.0 lens for 24/7 full-colour imaging', 'IP67 water and dust resistance', 'Active strobe light & audio alarm', '60m illumination range'],
+      description: 'Experience unparalleled clarity with our 8MP Ultra-HD ColorVu IP Dome Camera. Unlike traditional CCTV that goes black and white at night, this camera delivers vivid, true-color video 24/7, even in total darkness. Perfectly suited for homes, retail stores, and commercial perimeters, it provides indisputable evidence and deters intruders instantly with active strobe lighting.',
+      features: ['Active AI human & vehicle detection', '24/7 Full-Color imaging in zero light', 'IP67 weatherproof housing for harsh climates', '1-year free maintenance and configuration', 'Remote viewing from anywhere via mobile'],
       image: 'https://images.unsplash.com/photo-1557597774-9d273e51eb6e?q=80&w=800&auto=format&fit=crop'
     },
     {
@@ -55,8 +55,8 @@ const products = {
       name: '16-Channel NVR Security Hub',
       tag: 'AI Powered',
       tagColor: 'var(--primary)',
-      description: 'Network Video Recorder providing AI motion detection, massive storage capacity, and seamless mobile app integration via Hik-Connect.',
-      features: ['Supports up to 16 IP camera inputs', 'AI motion detection (human/vehicle)', 'Up to 8TB hard drive capacity', 'Remote live viewing via mobile app', 'H.265+ ultra-efficient compression'],
+      description: 'The brain of your surveillance network, this 16-Channel Network Video Recorder provides AI-driven motion detection and massive storage capacity. With seamless mobile app integration via Hik-Connect, it requires zero technical expertise to replay footage, track alerts, or monitor your property. It provides you ultimate control in one centralized, user-friendly hub.',
+      features: ['Supports up to 16 Ultra-HD IP cameras', 'Advanced AI motion and facial recognition', 'Up to 8TB hard drive capacity for long-term storage', 'One-click remote viewing via secure mobile app', 'Professional setup and lifetime support'],
       image: 'https://images.unsplash.com/photo-1555664424-778a1e5e1b48?q=80&w=800&auto=format&fit=crop'
     },
     {
@@ -64,8 +64,8 @@ const products = {
       name: 'PTZ Speed Dome Camera',
       tag: 'Long Range',
       tagColor: 'var(--primary)',
-      description: 'Pan-Tilt-Zoom speed dome with 25× optical zoom, auto-tracking, and 300m IR night vision. Ideal for large compounds, gates, and perimeter monitoring.',
-      features: ['25× optical zoom', 'Auto motion-tracking', '300m infrared night vision', 'IP66 outdoor rated', 'Preset patrol tours'],
+      description: 'Our Pan-Tilt-Zoom speed dome camera offers a staggering 25× optical zoom, auto-tracking capabilities, and 300m infrared night vision. Ideal for monitoring large compounds, community gates, and hospital perimeters, it actively tracks suspicious movement across vast distances, ensuring nothing escapes its view. ISO-certified and built to withstand the elements.',
+      features: ['25× optical zoom for license plate reading', 'Active AI auto motion-tracking', '300m commercial-grade infrared night vision', 'IP66 outdoor rated with anti-vandal casing', '2-year hardware replacement warranty'],
       image: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=800&auto=format&fit=crop'
     }
   ],
@@ -75,8 +75,8 @@ const products = {
       name: '550W Monocrystalline Panel',
       tag: 'High Efficiency',
       tagColor: 'var(--secondary)',
-      description: 'High-efficiency half-cell monocrystalline panels designed to maximise energy capture and reduce power loss, even on overcast Nairobi days.',
-      features: ['Efficiency up to 21.3%', 'Half-cut cell technology', 'Anti-reflective, anti-soiling glass', '25-year performance warranty', 'IEC 61215 & IEC 61730 certified'],
+      description: 'Transform abundant Kenyan sunshine into reliable energy with our high-efficiency half-cell monocrystalline panels. Designed to maximise energy capture and reduce power loss even on overcast days, these panels provide the ultimate foundation for off-grid and backup power systems. Ideal for homes and businesses seeking to eliminate massive KPLC bills.',
+      features: ['Grade-A efficiency up to 21.3%', 'Anti-reflective, self-cleaning glass surface', 'IEC 61215 & IEC 61730 globally certified', '25-year manufacturer performance warranty', 'Free site survey & precise load calculation'],
       image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=800&auto=format&fit=crop'
     },
     {
@@ -84,8 +84,8 @@ const products = {
       name: '5kWh LiFePO4 Wall Battery',
       tag: '6000+ Cycles',
       tagColor: 'var(--secondary)',
-      description: 'Deep cycle, ultra-safe lithium iron phosphate storage battery with intelligent BMS. Extremely long lifespan and stackable up to 15 units for large systems.',
-      features: ['Over 6,000 cycles at 80% DoD', 'Built-in intelligent BMS', 'Wall-mounted aesthetic design', 'Scalable up to 15 units in parallel', 'Thermal management system'],
+      description: 'Secure your energy independence with our premium 5kWh Lithium Iron Phosphate (LiFePO4) storage battery. Engineered to outlast traditional lead-acid batteries, it delivers ultra-safe, high-capacity power storage to keep your security systems and appliances running flawlessly during extended grid failures. Its highly scalable design means it grows with your needs.',
+      features: ['Intelligent built-in Battery Management System (BMS)', '6000+ deep-charge lifecycles guaranteed', 'Space-saving wall-mounted aesthetic', 'Expandable up to 15 units for commercial use', '10-year performance warranty included'],
       image: 'https://images.unsplash.com/photo-1620286801990-2bd161678dc2?q=80&w=800&auto=format&fit=crop'
     },
     {
@@ -93,8 +93,8 @@ const products = {
       name: '5kW Hybrid Inverter',
       tag: 'Smart Grid',
       tagColor: 'var(--secondary)',
-      description: 'Seamlessly switch between solar, battery, and KPLC grid power. Ensures your security systems and home never lose power during blackouts.',
-      features: ['Pure sine wave output', 'Configurable AC/Solar input priority', 'Auto-restart during AC recovery', 'Generator compatible', 'Wi-Fi monitoring via phone app'],
+      description: 'The ultimate power manager for your property. Our 5kW Hybrid Inverter seamlessly switches between solar, battery, and grid power in milliseconds. It ensures your critical security cameras, gates, and home appliances never lose power during sudden blackouts. Simple to use, fully automated, and remotely monitorable directly from your smartphone.',
+      features: ['Zero-delay seamless power switching', 'Configurable and automated AC/Solar priority', 'Smart Wi-Fi monitoring via mobile app', 'Compatible with backup diesel generators', '3-year comprehensive warranty'],
       image: 'https://images.unsplash.com/photo-1588697920130-97c7fb333833?q=80&w=800&auto=format&fit=crop'
     },
     {
@@ -102,9 +102,29 @@ const products = {
       name: 'Solar Street Light — 100W',
       tag: 'Integrated',
       tagColor: 'var(--secondary)',
-      description: 'All-in-one solar street light with built-in panel, battery, LED, and motion sensor. Zero grid power needed — perfect for driveways, compound perimeters, and roads.',
-      features: ['Built-in 100W solar panel', 'Motion-sensor auto dim/bright', '14–16 hour run time per night', 'IP65 waterproof steel housing', 'Easy pole-mount installation'],
+      description: 'Illuminate your pathways and perimeters effortlessly with our all-in-one 100W solar street light. Featuring a built-in panel, long-lasting battery, high-lumen LEDs, and a smart motion sensor, it requires zero grid power connection or technical wiring. Perfect for driveways and commercial perimeters looking to enhance nighttime security for free.',
+      features: ['100% off-grid operation (Zero KPLC bills)', 'Smart motion-sensor auto dimming', 'Provides 14–16 hours of continuous light', 'IP65 waterproof hardened steel housing', 'Durable, maintenance-free installation'],
       image: 'https://images.unsplash.com/photo-1596272856132-3c1bd2ea8882?q=80&w=800&auto=format&fit=crop'
+    }
+  ],
+  water: [
+    {
+      id: 'w1',
+      name: 'Phynetech Water Treatment Machine',
+      tag: 'KEBS Accredited',
+      tagColor: 'var(--primary)',
+      description: 'From KES 230,000. Features innovative filtration solutions including reverse osmosis and UV sterilization to completely eliminate impurities, making water safe for schools, homes, and businesses.',
+      features: ['Reverse Osmosis Membrane', 'UV Sterilizer for pathogens', 'Efficient Dosing Pump', 'Multi-stage cartridge filtration', '2-year warranty'],
+      image: 'https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=800&auto=format&fit=crop'
+    },
+    {
+      id: 'w2',
+      name: 'Phynetech Water Vending ATM',
+      tag: 'Commercial Use',
+      tagColor: 'var(--primary)',
+      description: 'Starting from KSH 100,000. Provides an easy and efficient way to dispense purified water with advanced features like customizable pricing, self-cleaning, and real-time remote monitoring.',
+      features: ['User-Friendly Interface with Multiple Payments', 'Automated Self-Cleaning System', 'Advanced Filtration System', 'Remote Management & Tracking', 'Compact, Durable & Energy Efficient'],
+      image: 'https://images.unsplash.com/photo-1523455716164-ca7bfe356401?q=80&w=800&auto=format&fit=crop'
     }
   ]
 };
@@ -223,6 +243,23 @@ const Products = () => {
           />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '2rem' }}>
             {products.cctv.map((item, i) => (
+              <motion.div key={item.id} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+                <ProductCard product={item as any} />
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        {/* ===== WATER SOLUTIONS ===== */}
+        <section style={{ marginBottom: '6rem' }}>
+          <SectionHeader
+            icon={<div className="icon-box icon-box-cyan" style={{ flexShrink: 0, width: '56px', height: '56px' }}><Droplets size={28} color="var(--primary)" /></div>}
+            label="Water Tech"
+            title="Water Treatment & Vending"
+            desc="We provide advanced water treatment machines and commercial vending ATMs fully accredited by KEBS. These automated machines utilize multi-stage filtration to ensure your properties always have access to safe, pathogen-free drinking water."
+          />
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '2rem' }}>
+            {products.water.map((item, i) => (
               <motion.div key={item.id} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
                 <ProductCard product={item as any} />
               </motion.div>
