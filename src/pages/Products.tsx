@@ -271,7 +271,7 @@ const Products = () => {
       <div className="container" style={{ padding: '6rem 1.5rem' }}>
 
         {/* ===== AUTOMATIC GATES ===== */}
-        <section style={{ marginBottom: '6rem' }}>
+        <section id="gates" style={{ marginBottom: '6rem' }}>
           <SectionHeader
             icon={<div className="icon-box icon-box-cyan" style={{ flexShrink: 0, width: '56px', height: '56px' }}><Shield size={28} color="var(--primary)" /></div>}
             label="Gate Automation"
@@ -288,7 +288,7 @@ const Products = () => {
         </section>
 
         {/* ===== CCTV ===== */}
-        <section style={{ marginBottom: '6rem' }}>
+        <section id="cctv" style={{ marginBottom: '6rem' }}>
           <SectionHeader
             icon={<div className="icon-box icon-box-cyan" style={{ flexShrink: 0, width: '56px', height: '56px' }}><Video size={28} color="var(--primary)" /></div>}
             label="Surveillance Technology"
@@ -305,7 +305,7 @@ const Products = () => {
         </section>
 
         {/* ===== WATER SOLUTIONS ===== */}
-        <section style={{ marginBottom: '6rem' }}>
+        <section id="water" style={{ marginBottom: '6rem' }}>
           <SectionHeader
             icon={<div className="icon-box icon-box-cyan" style={{ flexShrink: 0, width: '56px', height: '56px' }}><Droplets size={28} color="var(--primary)" /></div>}
             label="Water Tech"
@@ -322,7 +322,7 @@ const Products = () => {
         </section>
 
         {/* ===== SOLAR ===== */}
-        <section>
+        <section id="solar">
           <SectionHeader
             icon={<div className="icon-box icon-box-gold" style={{ flexShrink: 0, width: '56px', height: '56px' }}><Sun size={28} color="var(--secondary)" /></div>}
             label="Clean Energy"
