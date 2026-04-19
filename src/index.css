@@ -1,36 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap');
 
 :root {
-  /* === Core Dark Background === */
-  --bg-color: #06457f;
-  --bg-gradient: linear-gradient(145deg, #06457f 0%, #043666 40%, #032b53 100%);
+  /* === Core Light Background === */
+  --bg-color: #FFF1E7;
+  --bg-gradient: linear-gradient(145deg, #FFF1E7 0%, #fae6d8 40%, #f5dbca 100%);
 
   /* === Surface / Glassmorphism === */
-  --surface-color: rgba(255, 255, 255, 0.04);
-  --surface-hover: rgba(255, 255, 255, 0.08);
-  --surface-border: rgba(255, 255, 255, 0.1);
-  --surface-gradient: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+  --surface-color: rgba(255, 255, 255, 0.6);
+  --surface-hover: rgba(255, 255, 255, 0.8);
+  --surface-border: rgba(151, 205, 151, 0.3);
+  --surface-gradient: linear-gradient(135deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.3) 100%);
 
   /* === Brand Colors === */
-  --primary: #f6c992;           /* Warm Peach */
-  --primary-dark: #e8bd88;
-  --primary-glow: rgba(246, 201, 146, 0.25);
-  --secondary: #30525c;         /* Slate Teal */
-  --secondary-dark: #27454d;
-  --secondary-glow: rgba(48, 82, 92, 0.25);
+  --primary: #97CD97;           /* Seafoam Green glow requested */
+  --primary-dark: #7baf7b;
+  --primary-glow: rgba(151, 205, 151, 0.6);
+  --secondary: #e88c5d;         /* Contrast warm accent */
+  --secondary-dark: #cc784b;
+  --secondary-glow: rgba(232, 140, 93, 0.4);
   --accent: #fcad6b;            
-  --accent-glow: rgba(252, 173, 107, 0.2);
+  --accent-glow: rgba(252, 173, 107, 0.4);
 
   /* === Gradients === */
-  --gradient-primary: linear-gradient(135deg, #f6c992 0%, #e0aa62 100%);
-  --gradient-secondary: linear-gradient(135deg, #30525c 0%, #203f47 100%);
-  --gradient-hero: linear-gradient(180deg, rgba(6,69,127,0.3) 0%, rgba(6,69,127,0.7) 70%, rgba(6,69,127,1) 100%);
-  --gradient-text: linear-gradient(135deg, #ffffff 0%, #f6c992 50%, #ffffff 100%);
+  --gradient-primary: linear-gradient(135deg, #97CD97 0%, #7baf7b 100%);
+  --gradient-secondary: linear-gradient(135deg, #e88c5d 0%, #cc784b 100%);
+  --gradient-hero: linear-gradient(180deg, rgba(255,241,231,0.3) 0%, rgba(255,241,231,0.8) 70%, rgba(255,241,231,1) 100%);
+  --gradient-text: linear-gradient(135deg, #2a3a4a 0%, #1a2530 50%, #4a5a6a 100%);
 
   /* === Text === */
-  --text-primary: #f0f4ff;
-  --text-secondary: #8b9bb4;
-  --text-muted: #505f75;
+  --text-primary: #1a2530;
+  --text-secondary: #4a5a6a;
+  --text-muted: #708090;
 
   /* === Typography === */
   --font-heading: 'Outfit', sans-serif;
@@ -99,11 +99,13 @@ img {
   border-radius: var(--radius-md);
   padding: 2rem;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
 }
 
 .glass-panel:hover {
-  border-color: rgba(246, 201, 146, 0.25);
-  background: rgba(255,255,255,0.06);
+  border-color: rgba(151, 205, 151, 0.8);
+  background: rgba(255,255,255,0.8);
+  box-shadow: 0 8px 30px var(--primary-glow);
 }
 
 /* ==================== BUTTONS ==================== */
@@ -133,7 +135,7 @@ img {
 
 .btn-solid {
   background: var(--gradient-primary);
-  color: #000;
+  color: #fff;
   border: none;
   padding: 0.75rem 1.75rem;
   border-radius: 50px;
@@ -154,8 +156,8 @@ img {
 
 .btn-secondary {
   background: transparent;
-  color: #fff;
-  border: 1.5px solid rgba(255,255,255,0.2);
+  color: var(--text-primary);
+  border: 1.5px solid rgba(0,0,0,0.2);
   padding: 0.75rem 1.75rem;
   border-radius: 50px;
   font-family: var(--font-heading);
@@ -223,13 +225,13 @@ img {
 }
 
 .icon-box-cyan {
-  background: rgba(246, 201, 146, 0.1);
-  border: 1px solid rgba(246, 201, 146, 0.2);
+  background: rgba(151, 205, 151, 0.15);
+  border: 1px solid rgba(151, 205, 151, 0.4);
 }
 
 .icon-box-gold {
-  background: rgba(48, 82, 92, 0.1);
-  border: 1px solid rgba(48, 82, 92, 0.2);
+  background: rgba(232, 140, 93, 0.15);
+  border: 1px solid rgba(232, 140, 93, 0.4);
 }
 
 /* ==================== STAT CARD ==================== */
@@ -244,9 +246,9 @@ img {
 }
 
 .stat-card:hover {
-  border-color: rgba(246, 201, 146, 0.3);
+  border-color: rgba(151, 205, 151, 0.6);
   transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(246, 201, 146, 0.1);
+  box-shadow: 0 8px 32px var(--primary-glow);
 }
 
 .stat-number {

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Shield, Sun, Video, Target, Eye, Heart, Users, Award, Zap, ArrowRight } from 'lucide-react';
+import { Shield, Sun, Video, Target, Eye, Heart, Users, Award, Zap, ArrowRight, Droplets } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const fadeUp = {
@@ -54,6 +54,11 @@ const services = [
     title: 'Solar Energy Solutions',
     items: ['Rooftop Solar Panel Installation', 'Lithium Battery Energy Storage', 'Hybrid Inverter Systems', 'Solar Street & Flood Lighting']
   },
+  {
+    icon: <Droplets size={28} color="var(--primary)" />,
+    title: 'Water & Industrial Automation',
+    items: ['Water Purification & Treatment', 'Water Vending ATMs', 'Milk & Cooking Oil Dispensers', 'Programmable Logic Controllers']
+  }
 ];
 
 const About = () => {
@@ -103,10 +108,10 @@ const About = () => {
                 Benzo Security was founded with a clear vision — to bring world-class security technology and renewable energy solutions to Kenyan homes and businesses at an accessible price point.
               </p>
               <p style={{ color: 'var(--text-secondary)', lineHeight: 1.85, marginBottom: '1.25rem', fontSize: '1rem' }}>
-                We started by installing automatic gates for residential clients in Nairobi's growing suburbs, and quickly expanded into CCTV surveillance and solar installations as we witnessed the growing need for comprehensive property protection and reliable power.
+                Through strategic expansion and drawing on the deep expertise of industrial leaders like Phynetech Limited, we have broadened our horizons. We now deliver cutting-edge liquid dispensing automation, from Water Purifiers to Milk ATMs, drastically reducing operating costs for water vending entrepreneurs and commercial institutions.
               </p>
               <p style={{ color: 'var(--text-secondary)', lineHeight: 1.85, fontSize: '1rem' }}>
-                Today, Benzo Security is a full-spectrum property solutions company — trusted by hundreds of homeowners, schools, apartment complexes, and businesses across Nairobi and beyond.
+                Today, Benzo Security is a full-spectrum property and industrial solutions company — trusted by hundreds of homeowners, schools, apartment complexes, and agricultural businesses across Nairobi and beyond.
               </p>
             </motion.div>
 
@@ -124,7 +129,7 @@ const About = () => {
                   <h3 style={{ fontSize: '1.2rem', color: 'var(--primary)' }}>Our Mission</h3>
                 </div>
                 <p style={{ color: 'var(--text-secondary)', lineHeight: 1.75, fontSize: '0.95rem' }}>
-                  To deliver reliable, cutting-edge security and solar energy systems that genuinely protect Kenyan families and empower communities with clean, affordable power — backed by expert installation and lifelong support.
+                  To deliver reliable, cutting-edge security systems, solar power, and advanced industrial automation solutions that genuinely protect Kenyan families and empower entrepreneurs with cost-effective, efficient machinery.
                 </p>
               </motion.div>
 
@@ -140,7 +145,7 @@ const About = () => {
                   <h3 style={{ fontSize: '1.2rem', color: 'var(--secondary)' }}>Our Vision</h3>
                 </div>
                 <p style={{ color: 'var(--text-secondary)', lineHeight: 1.75, fontSize: '0.95rem' }}>
-                  To be Kenya's most trusted name in integrated security and solar solutions — building a future where every Kenyan property is protected, powered, and connected.
+                  To be Kenya's most trusted partner in integrated technology — from security to industrial liquid dispensing — building a future where every business is efficient and every property is protected.
                 </p>
               </motion.div>
             </div>

@@ -68,7 +68,30 @@ const solarSystems = [
   { name: 'Off-Grid System', icon: '🏕️', desc: 'Fully independent from KPLC. Panels + batteries provide 24/7 power. Perfect for farms, remote plots, or reliable backup.' },
   { name: 'Hybrid System', icon: '🔄', desc: 'Best of both: solar + battery + grid. Auto-switches to best source available. Most popular for Nairobi homes.' },
 ];
-const solarProcess = ['Free site survey & energy audit', 'Custom system design & proposal', 'Hardware procurement & delivery', 'Professional installation & wiring', 'Testing, commissioning & handover', 'Annual maintenance & support'];
+const solarProcess = ['Energy Consultations & Free site survey', 'Custom system design & proposal', 'Solar Equipments Design & Distribution', 'Professional installation & wiring', 'Testing, commissioning & handover', 'Annual maintenance & support'];
+
+const solarPanelTypes = [
+  { name: 'N-Type TOPCon Panels', desc: 'The latest generation. Highest efficiency (21-24%) and longest lifespan (30-40 years). Ideal for limited roof spaces requiring maximum power.' },
+  { name: 'Monocrystalline Panels', desc: 'Premium silicon purity. High efficiency (19-23%) and excellent performance in warm Kenyan climates. Lifespan of 25-40 years.' },
+  { name: 'Polycrystalline Panels', desc: 'Cost-effective alternative. Lower efficiency (15-17%) requiring more roof space. Reliable lifespan of 25-35 years.' },
+];
+
+const applianceWattage = [
+  { appliance: 'LED Bulb', power: '10W - 15W' },
+  { appliance: 'LED TV', power: '50W - 100W' },
+  { appliance: 'Refrigerator', power: '150W - 400W' },
+  { appliance: 'Laptop / Phone', power: '45W - 65W' },
+  { appliance: 'Ceiling Fan', power: '75W' },
+  { appliance: 'Microwave / Iron', power: '1000W - 1500W' },
+  { appliance: 'Washing Machine', power: '500W - 800W' },
+];
+
+const solarPricing = [
+  { brand: 'Jinko Solar (N-Type & Tiger Neo)', price: 'Ksh 9,350 - Ksh 12,450' },
+  { brand: 'Canadian Solar (HiHero)', price: 'Ksh 8,250 - Ksh 8,750' },
+  { brand: 'Trina Solar (Vertex)', price: 'Ksh 10,050 - Ksh 13,350' },
+  { brand: 'Longi / JA Solar', price: 'Ksh 6,750 - Ksh 10,750' },
+];
 
 const Services = () => {
   return (
@@ -286,7 +309,7 @@ const Services = () => {
               </div>
             </div>
             <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', maxWidth: '820px', lineHeight: 1.8 }}>
-              Kenya receives some of the highest solar irradiance in the world — over 4–6 kWh/m²/day. Benzo Security harnesses this to design and install complete solar energy systems that eliminate dependency on KPLC, slash electricity bills, and keep your security systems and home running 24/7.
+              Kenya receives some of the highest solar irradiance in the world — over 4–6 kWh/m²/day. Benzo Security harnesses this to design and install complete solar energy systems using premium brands like Jinko Solar, Felicity, and MUST inverters. We eliminate your dependency on KPLC, slash electricity bills, and keep your security systems and home running 24/7.
             </p>
           </motion.div>
 
@@ -319,6 +342,53 @@ const Services = () => {
                   <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', lineHeight: 1.7 }}>{b.desc}</p>
                 </motion.div>
               ))}
+            </div>
+          </div>
+
+          {/* Educational Solar Guides */}
+          <div style={{ marginBottom: '4rem', padding: '3rem', background: 'var(--surface-gradient)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--surface-border)' }}>
+            <h3 style={{ fontSize: '1.8rem', marginBottom: '2rem', textAlign: 'center', color: 'var(--text-primary)' }}>Solar Educational Guide</h3>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
+              {/* How it works & Sizing */}
+              <div>
+                <h4 style={{ fontSize: '1.2rem', marginBottom: '1rem', color: 'var(--secondary)' }}>How Solar & Sizing Works</h4>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
+                  Kenya's equatorial location ensures consistent solar yield. Photovoltaic (PV) panels convert sunlight to DC electricity, which the inverter changes to AC. To size your system: Calculate your daily load (Wh/day), divide by peak sun hours (average 5 hours in Kenya), add 20% for system losses, and select the appropriate panel wattage.
+                </p>
+                <h4 style={{ fontSize: '1.1rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>Panel Types Available</h4>
+                {solarPanelTypes.map((type, i) => (
+                  <div key={i} style={{ marginBottom: '1rem' }}>
+                    <strong style={{ color: 'var(--primary)', display: 'block', marginBottom: '0.2rem' }}>{type.name}</strong>
+                    <span style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', lineHeight: 1.5 }}>{type.desc}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Data Tables */}
+              <div>
+                {/* Appliance Matrix */}
+                <h4 style={{ fontSize: '1.2rem', marginBottom: '1rem', color: 'var(--secondary)' }}>Appliance Wattage Reference</h4>
+                <div style={{ background: 'rgba(0,0,0,0.03)', borderRadius: 'var(--radius-sm)', padding: '1rem', marginBottom: '2rem' }}>
+                  {applianceWattage.map((item, i) => (
+                    <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: i !== applianceWattage.length - 1 ? '1px dashed rgba(0,0,0,0.1)' : 'none', fontSize: '0.9rem' }}>
+                      <span style={{ color: 'var(--text-primary)' }}>{item.appliance}</span>
+                      <strong style={{ color: 'var(--text-secondary)' }}>{item.power}</strong>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Brands Matrix */}
+                <h4 style={{ fontSize: '1.2rem', marginBottom: '1rem', color: 'var(--secondary)' }}>Top Brands & Price Estimates</h4>
+                <div style={{ background: 'rgba(0,0,0,0.03)', borderRadius: 'var(--radius-sm)', padding: '1rem' }}>
+                  {solarPricing.map((item, i) => (
+                    <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: i !== solarPricing.length - 1 ? '1px dashed rgba(0,0,0,0.1)' : 'none', fontSize: '0.9rem' }}>
+                      <span style={{ color: 'var(--text-primary)' }}>{item.brand}</span>
+                      <strong style={{ color: 'var(--text-secondary)' }}>{item.price}</strong>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
 

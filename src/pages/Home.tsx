@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
-import { Shield, Sun, Video, ArrowRight, CheckCircle2, Star, Clock, Wrench, Phone } from 'lucide-react';
+import { Shield, Sun, Video, ArrowRight, CheckCircle2, Star, Clock, Wrench, Phone, Droplets } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { products, ProductCard } from './Products';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -47,7 +48,17 @@ const services = [
     glow: 'rgba(255, 183, 3, 0.15)',
     desc: 'Beat Kenya Power blackouts with premium solar panels and lithium battery backups. Reliable, clean energy powering your security systems and home 24/7.',
     features: ['Monocrystalline Solar Panels', 'LiFePO4 Battery Banks', 'Hybrid Inverter Systems', 'Solar Street Lighting'],
-    link: '/products'
+    link: '/products#solar'
+  },
+  {
+    icon: <Droplets size={32} color="var(--primary)" />,
+    iconClass: 'icon-box-cyan',
+    title: 'Water Treatment & Vending',
+    color: 'var(--primary)',
+    glow: 'rgba(151, 205, 151, 0.2)',
+    desc: 'Phynetech-powered Reverse Osmosis machines, water purifiers, and Water Vending ATMs providing clean, safe water for homes, businesses, and communities across Kenya.',
+    features: ['Reverse Osmosis Machines', 'Water Vending ATMs', 'Water Filling Stations', 'KEBS Certified Systems'],
+    link: '/products#water'
   },
 ];
 
@@ -211,6 +222,49 @@ const Home = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ===== FEATURED PRODUCTS CAROUSELS ===== */}
+      <section style={{ padding: '6rem 0', background: 'var(--surface-gradient)' }}>
+        <div className="container">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <span className="section-badge">Premium Hardware</span>
+            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.8rem)', marginTop: '0.75rem', color: 'var(--text-primary)' }}>Hardware Catalog</h2>
+            <div className="section-divider" style={{ background: 'var(--primary)' }} />
+          </motion.div>
+
+          {/* Carousel Factory Function */}
+          {[
+            { title: 'Solar Energy Products', array: products.solar, isGold: true },
+            { title: 'Surveillance & CCTV', array: products.cctv, isGold: false },
+            { title: 'Automatic Gates', array: products.gates, isGold: false }
+          ].map((category, idx) => (
+            <div key={idx} style={{ marginBottom: '4rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+                <h3 style={{ fontSize: '1.4rem', color: category.isGold ? 'var(--secondary)' : 'var(--text-primary)' }}>{category.title}</h3>
+                <Link to="/products" style={{ fontSize: '0.9rem', color: 'var(--primary)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+                  See All <ArrowRight size={14} />
+                </Link>
+              </div>
+              <div style={{
+                display: 'flex',
+                gap: '1.5rem',
+                overflowX: 'auto',
+                scrollSnapType: 'x mandatory',
+                paddingBottom: '2rem',
+                WebkitOverflowScrolling: 'touch',
+                scrollbarWidth: 'thin',
+                scrollbarColor: 'rgba(151, 205, 151, 0.4) transparent'
+              }}>
+                {category.array.map((item) => (
+                  <div key={item.id} style={{ minWidth: '300px', maxWidth: '350px', flexShrink: 0, scrollSnapAlign: 'start' }}>
+                    <ProductCard product={item as any} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

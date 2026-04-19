@@ -22,6 +22,7 @@ const ScrollToTop = () => {
 const App = () => {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [productDropdownOpen, setProductDropdownOpen] = useState(false);
 
   const isActive = (path: string) =>
     location.pathname === path ? 'var(--primary)' : 'var(--text-secondary)';
@@ -46,10 +47,10 @@ const App = () => {
       {/* ===== Navigation Bar ===== */}
       <header style={{
         height: 'var(--nav-height)',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        borderBottom: '1px solid rgba(0,0,0,0.08)',
         display: 'flex',
         alignItems: 'center',
-        background: 'rgba(6, 10, 20, 0.85)',
+        background: 'rgba(255,241,231,0.92)',
         backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)',
         position: 'sticky',
@@ -76,19 +77,61 @@ const App = () => {
 
           {/* Desktop Nav Links */}
           <nav className="desktop-nav" style={{ display: 'none' }}>
-            {navLinks.map(({ to, label }) => (
-              <Link key={to} to={to} style={{
-                color: isActive(to),
-                fontWeight: 500,
-                fontSize: '0.95rem',
-                fontFamily: 'var(--font-heading)',
-                transition: 'color 0.2s',
-                position: 'relative',
-                padding: '0.25rem 0'
-              }}>
-                {label}
-              </Link>
-            ))}
+            {navLinks.map(({ to, label }) => {
+              if (label === 'Products') {
+                return (
+                  <div key={to} 
+                    onMouseEnter={() => setProductDropdownOpen(true)}
+                    onMouseLeave={() => setProductDropdownOpen(false)}
+                    style={{ position: 'relative', display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
+                    <Link to={to} style={{
+                      color: isActive(to), fontWeight: 500, fontSize: '0.95rem',
+                      fontFamily: 'var(--font-heading)', transition: 'color 0.2s', padding: '1.5rem 0'
+                    }}>
+                      {label}
+                    </Link>
+                    {productDropdownOpen && (
+                    <div style={{
+                        position: 'absolute', top: '100%', left: '-1rem',
+                        background: 'rgba(255,241,231,0.98)', backdropFilter: 'blur(20px)',
+                        border: '1px solid rgba(151,205,151,0.3)', borderRadius: '12px',
+                        padding: '0.5rem', display: 'flex', flexDirection: 'column',
+                        minWidth: '240px', animation: 'slideUp 0.15s ease',
+                        boxShadow: '0 10px 40px rgba(0,0,0,0.12)'
+                      }}>
+                        {[
+                          { name: '🚪 Gates & Automation', hash: 'gates' },
+                          { name: '📷 CCTV & Surveillance', hash: 'cctv' },
+                          { name: '☀️ Solar Energy', hash: 'solar' },
+                          { name: '💧 Water Tech', hash: 'water' }
+                        ].map(item => (
+                          <Link key={item.name} to={`/products`} onClick={() => {
+                            setTimeout(() => {
+                              const el = document.getElementById(item.hash);
+                              if (el) el.scrollIntoView({ behavior: 'smooth' });
+                            }, 100);
+                          }}
+                          style={{ color: 'var(--text-secondary)', padding: '0.75rem 1rem', fontSize: '0.9rem', borderRadius: '6px', transition: 'all 0.2s' }}
+                            onMouseEnter={e => { e.currentTarget.style.color = 'var(--text-primary)'; e.currentTarget.style.background = 'rgba(151,205,151,0.1)'; }}
+                            onMouseLeave={e => { e.currentTarget.style.color = 'var(--text-secondary)'; e.currentTarget.style.background = 'transparent'; }}
+                          >
+                            {item.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+              return (
+                <Link key={to} to={to} style={{
+                  color: isActive(to), fontWeight: 500, fontSize: '0.95rem',
+                  fontFamily: 'var(--font-heading)', transition: 'color 0.2s', padding: '1.5rem 0'
+                }}>
+                  {label}
+                </Link>
+              );
+            })}
             <Link to="/contact">
               <button className="btn-primary" style={{ padding: '0.5rem 1.25rem', fontSize: '0.9rem' }}>
                 Contact Us <ChevronRight size={15} />
@@ -135,24 +178,51 @@ const App = () => {
           gap: '0.5rem',
           animation: 'slideUp 0.2s ease'
         }}>
-          {navLinks.map(({ to, label }) => (
-            <Link
-              key={to}
-              to={to}
-              style={{
-                color: isActive(to),
-                fontWeight: 600,
-                fontSize: '1.1rem',
-                fontFamily: 'var(--font-heading)',
-                padding: '0.75rem 1rem',
-                borderRadius: '8px',
-                background: location.pathname === to ? 'rgba(0, 229, 255, 0.08)' : 'transparent',
+          {navLinks.map(({ to, label }) => {
+            if (label === 'Products') {
+              return (
+                <div key={to}>
+                  <Link to={to} style={{
+                    color: isActive(to), fontWeight: 600, fontSize: '1.1rem',
+                    fontFamily: 'var(--font-heading)', padding: '0.75rem 1rem',
+                    borderRadius: '8px', background: location.pathname === to ? 'rgba(0, 229, 255, 0.08)' : 'transparent',
+                    display: 'block'
+                  }}>
+                    {label}
+                  </Link>
+                  <div style={{ paddingLeft: '2rem', display: 'flex', flexDirection: 'column', gap: '0.25rem', marginTop: '0.25rem' }}>
+                    {[
+                      { name: '🚪 Gates & Automation', hash: 'gates' },
+                      { name: '📷 CCTV & Surveillance', hash: 'cctv' },
+                      { name: '☀️ Solar Energy', hash: 'solar' },
+                      { name: '💧 Water Tech', hash: 'water' }
+                    ].map(item => (
+                      <Link key={item.name} to={`/products`} onClick={() => {
+                        setMenuOpen(false);
+                        setTimeout(() => {
+                          const el = document.getElementById(item.hash);
+                          if (el) el.scrollIntoView({ behavior: 'smooth' });
+                        }, 150);
+                      }}
+                      style={{ color: 'var(--text-secondary)', padding: '0.5rem', fontSize: '0.95rem' }}>
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            }
+            return (
+              <Link key={to} to={to} style={{
+                color: isActive(to), fontWeight: 600, fontSize: '1.1rem',
+                fontFamily: 'var(--font-heading)', padding: '0.75rem 1rem',
+                borderRadius: '8px', background: location.pathname === to ? 'rgba(0, 229, 255, 0.08)' : 'transparent',
                 display: 'block'
-              }}
-            >
-              {label}
-            </Link>
-          ))}
+              }}>
+                {label}
+              </Link>
+            );
+          })}
           <Link to="/contact" style={{ marginTop: '0.5rem' }}>
             <button className="btn-solid" style={{ width: '100%', justifyContent: 'center', padding: '0.85rem' }}>
               Contact Us <ChevronRight size={16} />
